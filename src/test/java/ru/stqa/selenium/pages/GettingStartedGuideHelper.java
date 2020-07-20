@@ -12,11 +12,17 @@ public class GettingStartedGuideHelper extends PageBase {
         super(driver);
     }
 
-    public void switchToNewWindowAndWaitPageLoading(){
+    public GettingStartedGuideHelper switchToNewWindowAndWaitPageLoading(){
+        log4j.info("-- Class GettingStartedGuideHelper, method switchToNewWindowAndWaitPageLoading() was started");
+        log4j.info("Wait until number of windows is 2");
         waitUntilNumberOfWindows(2,30);
+        log4j.info("Getting another window handle");
         String anotherHandle = getAnotherWindowHandle(driver.getWindowHandle());
+        log4j.info("Switching to another window handle");
         switchToWindow(anotherHandle);
+        log4j.info("Wait until button 'Go to Your Boards' is clickable");
         waitUntilElementIsClickable(goToYourBoardsUpperButton,20);
+        return this;
     }
 
 

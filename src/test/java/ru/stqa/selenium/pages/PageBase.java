@@ -5,6 +5,7 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
+import util.LogLog4j;
 
 import java.util.List;
 import java.util.Set;
@@ -12,6 +13,7 @@ import java.util.concurrent.TimeUnit;
 
 public class PageBase {
     WebDriver driver;
+    public static LogLog4j log4j = new LogLog4j();
 
     public PageBase(WebDriver driver) {
         this.driver = driver;

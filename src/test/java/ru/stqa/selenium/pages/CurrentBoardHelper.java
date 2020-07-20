@@ -34,6 +34,8 @@ public class CurrentBoardHelper extends PageBase{
         PageFactory.initElements(driver,this);
     }
     public CurrentBoardHelper openCurrentBoard() {
+        log4j.info("-- Class CurrentBoardHelper, method openCurrentBoard() was started");
+        log4j.info("Click our board");
         System.out.println("From openCurrentBoard: " + this.boardName);
         WebElement ourBoard = driver
                 .findElement(By.xpath(boardLocator()));
@@ -42,7 +44,10 @@ public class CurrentBoardHelper extends PageBase{
     }
 
     public CurrentBoardHelper waitUntilPageIsLoaded(){
+        log4j.info("-- Class CurrentBoardHelper, method waitUntilPageIsLoaded() was started");
+        log4j.info("Wait until title of board is visible");
         waitUntilElementIsVisible(By.xpath(boardTitleLocator()),15);
+        log4j.info("Wait until button adding list is clickable");
         waitUntilElementIsClickable(addListOption,15);
         return this;
     }
@@ -52,31 +57,47 @@ public class CurrentBoardHelper extends PageBase{
     }
 
     public CurrentBoardHelper createNewList(String title){
+        log4j.info("-- Class CurrentBoardHelper, method createNewList() was started");
+        log4j.info("Create new list button pressing");
         this.pressCreateNewListButton();
+        log4j.info("Entering title of the new list , value" + title);
         this.enterTitle(title);
+        log4j.info("Submit adding list");
         this.submitAddingList();
+        log4j.info("Cancel edit mode");
         this.cancelFromEditMode();
         return this;
     }
     public CurrentBoardHelper pressCreateNewListButton() {
+        log4j.info("-- Class CurrentBoardHelper, method pressCreateNewListButton() was started");
+        log4j.info("Click button 'Add a list' or 'Add another list");
         addListOption.click();
+        log4j.info("Wait until title field is visible");
         waitUntilElementIsVisible(addTitleField,10);
         return this;
     }
 
     public CurrentBoardHelper enterTitle(String title) {
+        log4j.info("-- Class CurrentBoardHelper, method enterTitle() was started");
+        log4j.info("Clicking a field to add a title");
         addTitleField.click();
+        log4j.info("Entering a value to add a title" + title);
         addTitleField.sendKeys(title);
+        log4j.info("Wait until 'add list' button is clickable");
         waitUntilElementIsClickable(addListButton,10);
         return this;
     }
 
     public CurrentBoardHelper submitAddingList() {
+        log4j.info("-- Class CurrentBoardHelper, method submitAddingList() was started");
+        log4j.info("Click button 'Add list'");
         addListButton.click();
         return this;
     }
 
     public CurrentBoardHelper cancelFromEditMode() {
+        log4j.info("-- Class CurrentBoardHelper, method cancelFromEditMode() was started");
+        log4j.info("Click button cancel editing list");
         cancelEditList.click();
         return this;
     }
@@ -97,6 +118,8 @@ public class CurrentBoardHelper extends PageBase{
 
     public CurrentBoardHelper pressAddCardButton(){
         //--- Define two possible buttons for adding new card and click on the displayed one---
+        log4j.info("-- Class CurrentBoardHelper, method pressAddCardButton() was started");
+        log4j.info("Click button adding card");
         WebElement addCardButton = driver
                 .findElement(By.cssSelector("span.js-add-a-card"));
         WebElement addAnotherCardButton = driver

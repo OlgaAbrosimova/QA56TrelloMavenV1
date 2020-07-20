@@ -17,10 +17,14 @@ public class BoardsPageHelper extends PageBase {
     }
 
 
-    public void waitUntilPageIsLoaded() {
-        waitUntilElementIsClickable(boardsIcon,50);
-        waitUntilElementIsClickable(upperRight,30);
+    public BoardsPageHelper waitUntilPageIsLoaded() {
+        log4j.info("-- Class BoardsPageHelper, method waitUntilPageIsLoaded() was started");
+        log4j.info("Wait until board icon is clickable");
+        waitUntilElementIsClickable(boardsIcon,40);
+        log4j.info("Wait until upper right menu is clickable");
+        waitUntilElementIsClickable(upperRight,20);
         waitUntilElementIsClickable(By.cssSelector(".board-tile.mod-add"),30);
+        return this;
     }
 
     public String getButtonBoardsText(){

@@ -15,8 +15,10 @@ public class ActivityPageHelper extends PageBase {
     }
 
     public ActivityPageHelper waitUntilPageIsLoaded(){
-    waitUntilAllElementsAreVisible(activityRecordsList,30);
-    return this;
+        log4j.info("-- Class ActivityPageHelper, method waitUntilPageIsLoaded() was started");
+        log4j.info("Wait until activity records list are visible");
+        waitUntilAllElementsAreVisible(activityRecordsList,30);
+        return this;
     }
 
     public String getLastActivityText() {

@@ -32,27 +32,36 @@ public class ActivityMenuTests extends TestBase {
     }
     @Test
     public void addingNewListEventInActivity(){
+        log4j.startTestCase("addingNewListEventInActivity");
         String listTitle = "Activity new";
+        log4j.info("New list was creating: " + listTitle);
         qaHaifa56Page.createNewList(listTitle);
+        log4j.info("Header member menu screen is loading");
         upperMenuPage.openMenuPage()
                      .waitUntilPageIsLoaded()
                      .openActivityPage();
+        log4j.info("Wait until page 'Activity' is loaded");
         activityPage.waitUntilPageIsLoaded();
 
         Assert.assertTrue(activityPage.getLastActivityText().contains(" added list "+ listTitle + " to "),
                 "The text in the last activity record doesn't correspond to event adding new list " + listTitle );
+        log4j.endTestCase();
     }
 
     @Test(dataProviderClass = DataProviders.class,dataProvider = "DPaddingNewListEventInActivity")
     public void addingNewListEventInActivityDP1(String title){
-        //String listTitle = "Activity new";
+        log4j.startTestCase("addingNewListEventInActivityDP1");
+        log4j.info("New list was creating: " + title);
         qaHaifa56Page.createNewList(title);
+        log4j.info("Header member menu screen is loading");
         upperMenuPage.openMenuPage()
                      .waitUntilPageIsLoaded()
                      .openActivityPage();
+        log4j.info("Wait until page 'Activity' is loaded");
         activityPage.waitUntilPageIsLoaded();
 
         Assert.assertTrue(activityPage.getLastActivityText().contains(" added list "+ title + " to "),
                 "The text in the last activity record doesn't correspond to event adding new list " + title );
+        log4j.endTestCase();
     }
 }

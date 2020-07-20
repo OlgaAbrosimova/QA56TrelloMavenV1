@@ -35,11 +35,13 @@ public class GettingStartedHelpTests extends TestBase {
     }
     @Test
     public void gettingStartedGuideHelpOpening()  {
+        log4j.startTestCase("gettingStartedGuideHelpOpening");
+        log4j.info("Choosing getting started guide menu");
         helpSectionPage.chooseGettingStartedGuideMenu();
+        log4j.info("Switching to new window and waiting page loading");
         gettingStartedGuidePage.switchToNewWindowAndWaitPageLoading();
         Assert.assertEquals(gettingStartedGuidePage.getTitle(),"Getting Started with Trello",
                 "Actual title is not equal to expected title");
-
-
+        log4j.endTestCase();
     }
 }

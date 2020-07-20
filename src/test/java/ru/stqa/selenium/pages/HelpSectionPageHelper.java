@@ -15,13 +15,17 @@ public class HelpSectionPageHelper extends PageBase {
         super(driver);
     }
 
-    public void waitUntilPageIsLoaded(){
+    public HelpSectionPageHelper waitUntilPageIsLoaded(){
         waitUntilFrameIsLoadedAndSwitchToIt(frameHelp, 30);
-
+        return this;
     }
 
-    public void chooseGettingStartedGuideMenu(){
+    public HelpSectionPageHelper chooseGettingStartedGuideMenu(){
+        log4j.info("-- Class HelpSectionPageHelper, method chooseGettingStartedGuideMenu() was started");
+        log4j.info("Wait until 'Getting started guide' menu item is clickable");
         waitUntilElementIsClickable(gettingStartedGuideMenu,15);
+        log4j.info("Click 'Getting started guide' menu item");
         gettingStartedGuideMenu.click();
+        return this;
     }
 }

@@ -21,13 +21,20 @@ public class ProfileVisabilityHelper extends PageBase {
         super(driver);
     }
 
-    public void waitUntilPageIsLoaded(){
-    waitUntilElementIsClickable(saveButton,30);
-    waitUntilElementIsVisible(userNameAfterShtrudel,30);
-    waitUntilElementIsVisible(userNameField,20);
+    public ProfileVisabilityHelper waitUntilPageIsLoaded(){
+        log4j.info("-- Class ProfileVisabilityHelper, method waitUntilPageIsLoaded() was started");
+        log4j.info("Wait until button 'Save' is clickable");
+        waitUntilElementIsClickable(saveButton,30);
+        log4j.info("Wait until username after shtrudel is visible");
+        waitUntilElementIsVisible(userNameAfterShtrudel,30);
+        log4j.info("Wait until field username is visible");
+        waitUntilElementIsVisible(userNameField,20);
+        return this;
     }
 
     public String getUpperRightMenuText(){
+        log4j.info("-- Class ProfileVisabilityHelper, method getUpperRightMenuText() was started");
+        log4j.info("Getting text of button header member menu");
         return upperRightMenu.findElement(By.xpath(".//span")).getText();
     }
 
@@ -40,10 +47,14 @@ public class ProfileVisabilityHelper extends PageBase {
     }
 
     public String getUserNameAfterShtrudelText(){
+        log4j.info("-- Class ProfileVisabilityHelper, method getUserNameAfterShtrudelText() was started");
+        log4j.info("Getting text of userName after shtrudel");
         return userNameAfterShtrudel.getText().replace("@","");
     }
 
     public String getUserNameText(){
+        log4j.info("-- Class ProfileVisabilityHelper, method getUserNameText() was started");
+        log4j.info("Getting value of field 'Username'");
         return userNameField.getAttribute("value");
     }
 
