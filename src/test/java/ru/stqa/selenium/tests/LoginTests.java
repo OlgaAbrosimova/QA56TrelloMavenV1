@@ -14,14 +14,14 @@ public class LoginTests extends TestBase{
     LoginPageHelper loginPage;
     BoardsPageHelper boardsPage;
 
-    @BeforeMethod
+    @BeforeMethod(alwaysRun = true)
     public void initTests(){
         loginPage = PageFactory.initElements(driver, LoginPageHelper.class);
         boardsPage = PageFactory.initElements(driver,BoardsPageHelper.class);
         loginPage.openLoginPage();
     }
 
-    @Test
+    @Test(groups = {"smoke","regression","login"})
     public void loginTestPositive()  {
         log4j.startTestCase("loginTestPositive");
         log4j.info("Login/password were entering: " + LOGIN + ", " + PASSWORD);
@@ -44,7 +44,7 @@ public class LoginTests extends TestBase{
         log4j.endTestCase();
     }
 
-    @Test(dataProviderClass = DataProviders.class,dataProvider = "dataProviderFirst")
+    @Test(groups = {"smoke"},dataProviderClass = DataProviders.class,dataProvider = "dataProviderFirst")
     public void NegativeLoginIncorrect(String login,String password,String message) {
         log4j.startTestCase("NegativeLoginIncorrect: " + login +", "+ password + ", " + message);
         log4j.info("Login to the system: " + login + ", "+ password);

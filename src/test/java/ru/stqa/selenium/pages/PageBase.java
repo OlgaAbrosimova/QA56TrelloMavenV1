@@ -1,6 +1,7 @@
 package ru.stqa.selenium.pages;
 
 import org.openqa.selenium.By;
+import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedConditions;
@@ -150,6 +151,18 @@ public class PageBase {
         textField.click();
         textField.clear();
         textField.sendKeys(value);
+    }
+
+    public void scrollDown(int x,int y) {
+        JavascriptExecutor js = (JavascriptExecutor) driver;
+        js.executeScript("window.scrollBy(" + x + "," + y + ")");
+
+    }
+
+    public void scrollDownToViewElement(WebElement element) {
+        JavascriptExecutor js = (JavascriptExecutor) driver;
+        js.executeScript("arguments[0].scrollIntoView();", element);
+
     }
 
 }

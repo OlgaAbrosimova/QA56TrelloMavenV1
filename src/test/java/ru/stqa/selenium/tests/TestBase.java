@@ -1,12 +1,12 @@
 package ru.stqa.selenium.tests;
 
-import org.openqa.selenium.By;
-import org.openqa.selenium.Capabilities;
-import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.WebElement;
+import com.google.common.io.Files;
+import org.openqa.selenium.*;
+
 import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.events.AbstractWebDriverEventListener;
 import org.openqa.selenium.support.events.EventFiringWebDriver;
+import org.testng.ITestResult;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.AfterSuite;
 import org.testng.annotations.BeforeMethod;
@@ -16,8 +16,10 @@ import ru.stqa.selenium.factory.WebDriverPool;
 import ru.stqa.selenium.pages.*;
 import util.LogLog4j;
 
+import java.io.File;
 import java.io.IOException;
 import java.net.URL;
+
 
 
 public class TestBase {
@@ -31,6 +33,7 @@ public class TestBase {
     public static final String USERNAME ="olgaabrosimova1";
     public static LogLog4j log4j = new LogLog4j();
     HomePageHelper homePage;
+
     public static class MyListener extends AbstractWebDriverEventListener{
         @Override
         public void beforeFindBy(By by, WebElement element, WebDriver driver) {
@@ -44,13 +47,23 @@ public class TestBase {
 
         @Override
         public void onException(Throwable throwable, WebDriver driver) {
-            log4j.error(
-
-                    "Error: "+ throwable);
+            String screenName = "screen-" + System.currentTimeMillis() + ".png";
+            createSnapshot(screenName,driver);
+            log4j.error("Error: "+ throwable + " See file " + screenName);
         }
     }
 
-    @BeforeSuite
+    public static void createSnapshot(String name, WebDriver driver){
+        File tmp = ((TakesScreenshot)driver).getScreenshotAs(OutputType.FILE);
+        File screen = new File(name);
+        try {
+            Files.copy(tmp,screen);
+        } catch (IOException e){
+            e.printStackTrace();
+        }
+    }
+
+    @BeforeSuite(alwaysRun = true)
     public void initTestSuite() throws IOException {
         SuiteConfiguration config = new SuiteConfiguration();
         baseUrl = config.getProperty("site.url");
@@ -61,7 +74,7 @@ public class TestBase {
     }
 
 
-    @BeforeMethod
+    @BeforeMethod(alwaysRun = true)
     public void initWbDriver()  {
         //---- Enter to the application ---
         //driver = new ChromeDriver();
@@ -74,8 +87,13 @@ public class TestBase {
 
     }
 
-    @AfterMethod
-    public void tearDownForTest(){
+    @AfterMethod(alwaysRun = true)
+    public void tearDownForTest(ITestResult result){
+        if (result.getStatus() == ITestResult.FAILURE){
+            String screenName = "screen-" + System.currentTimeMillis() + ".png";
+            createSnapshot(screenName,driver);
+            log4j.error("Test failure,  "+ "see file " + screenName);
+        }
         driver.quit();
     }
 

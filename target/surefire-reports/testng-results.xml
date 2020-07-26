@@ -1,0 +1,216 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testng-results skipped="0" failed="0" ignored="8" total="13" passed="5">
+  <reporter-output>
+  </reporter-output>
+  <suite name="Tests" duration-ms="74249" started-at="2020-07-24T11:33:21 IDT" finished-at="2020-07-24T11:34:36 IDT">
+    <groups>
+      <group name="regression">
+        <method signature="LoginTests.loginTestPositive()[pri:0, instance:ru.stqa.selenium.tests.LoginTests@133e16fd]" name="loginTestPositive" class="ru.stqa.selenium.tests.LoginTests"/>
+      </group> <!-- regression -->
+      <group name="smoke">
+        <method signature="LoginTests.NegativeLoginIncorrect(java.lang.String, java.lang.String, java.lang.String)[pri:0, instance:ru.stqa.selenium.tests.LoginTests@133e16fd]" name="NegativeLoginIncorrect" class="ru.stqa.selenium.tests.LoginTests"/>
+        <method signature="LoginTests.loginTestPositive()[pri:0, instance:ru.stqa.selenium.tests.LoginTests@133e16fd]" name="loginTestPositive" class="ru.stqa.selenium.tests.LoginTests"/>
+      </group> <!-- smoke -->
+      <group name="login">
+        <method signature="LoginTests.loginTestPositive()[pri:0, instance:ru.stqa.selenium.tests.LoginTests@133e16fd]" name="loginTestPositive" class="ru.stqa.selenium.tests.LoginTests"/>
+      </group> <!-- login -->
+    </groups>
+    <test name="smoke" duration-ms="74249" started-at="2020-07-24T11:33:21 IDT" finished-at="2020-07-24T11:34:36 IDT">
+      <class name="ru.stqa.selenium.tests.LoginTests">
+        <test-method status="PASS" signature="initWbDriver()[pri:0, instance:ru.stqa.selenium.tests.LoginTests@133e16fd]" name="initWbDriver" is-config="true" duration-ms="6383" started-at="2020-07-24T11:33:21 IDT" finished-at="2020-07-24T11:33:28 IDT">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- initWbDriver -->
+        <test-method status="PASS" signature="initTests()[pri:0, instance:ru.stqa.selenium.tests.LoginTests@133e16fd]" name="initTests" is-config="true" duration-ms="2431" started-at="2020-07-24T11:33:28 IDT" finished-at="2020-07-24T11:33:30 IDT">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- initTests -->
+        <test-method status="PASS" signature="NegativeLoginIncorrect(java.lang.String, java.lang.String, java.lang.String)[pri:0, instance:ru.stqa.selenium.tests.LoginTests@133e16fd]" name="NegativeLoginIncorrect" duration-ms="2932" started-at="2020-07-24T11:33:30 IDT" data-provider="dataProviderFirst" finished-at="2020-07-24T11:33:33 IDT">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[gftov0122334556@gmail.com]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[password]]>
+              </value>
+            </param>
+            <param index="2">
+              <value>
+                <![CDATA[There isn't an account for this email]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- NegativeLoginIncorrect -->
+        <test-method status="PASS" signature="tearDownForTest(org.testng.ITestResult)[pri:0, instance:ru.stqa.selenium.tests.LoginTests@133e16fd]" name="tearDownForTest" is-config="true" duration-ms="581" started-at="2020-07-24T11:33:33 IDT" finished-at="2020-07-24T11:33:34 IDT">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[[TestResult name=NegativeLoginIncorrect status=SUCCESS method=LoginTests.NegativeLoginIncorrect(java.lang.String, java.lang.String, java.lang.String)[pri:0, instance:ru.stqa.selenium.tests.LoginTests@133e16fd] output={null}]]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDownForTest -->
+        <test-method status="PASS" signature="initWbDriver()[pri:0, instance:ru.stqa.selenium.tests.LoginTests@133e16fd]" name="initWbDriver" is-config="true" duration-ms="5730" started-at="2020-07-24T11:33:34 IDT" finished-at="2020-07-24T11:33:39 IDT">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- initWbDriver -->
+        <test-method status="PASS" signature="initTests()[pri:0, instance:ru.stqa.selenium.tests.LoginTests@133e16fd]" name="initTests" is-config="true" duration-ms="2509" started-at="2020-07-24T11:33:39 IDT" finished-at="2020-07-24T11:33:42 IDT">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- initTests -->
+        <test-method status="PASS" signature="NegativeLoginIncorrect(java.lang.String, java.lang.String, java.lang.String)[pri:0, instance:ru.stqa.selenium.tests.LoginTests@133e16fd]" name="NegativeLoginIncorrect" duration-ms="2921" started-at="2020-07-24T11:33:42 IDT" data-provider="dataProviderFirst" finished-at="2020-07-24T11:33:45 IDT">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[gftov0122334556gmail.com]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[password1]]>
+              </value>
+            </param>
+            <param index="2">
+              <value>
+                <![CDATA[There isn't an account for this username]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- NegativeLoginIncorrect -->
+        <test-method status="PASS" signature="tearDownForTest(org.testng.ITestResult)[pri:0, instance:ru.stqa.selenium.tests.LoginTests@133e16fd]" name="tearDownForTest" is-config="true" duration-ms="579" started-at="2020-07-24T11:33:45 IDT" finished-at="2020-07-24T11:33:45 IDT">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[[TestResult name=NegativeLoginIncorrect status=SUCCESS method=LoginTests.NegativeLoginIncorrect(java.lang.String, java.lang.String, java.lang.String)[pri:0, instance:ru.stqa.selenium.tests.LoginTests@133e16fd] output={null}]]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDownForTest -->
+        <test-method status="PASS" signature="initWbDriver()[pri:0, instance:ru.stqa.selenium.tests.LoginTests@133e16fd]" name="initWbDriver" is-config="true" duration-ms="5933" started-at="2020-07-24T11:33:45 IDT" finished-at="2020-07-24T11:33:51 IDT">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- initWbDriver -->
+        <test-method status="PASS" signature="initTests()[pri:0, instance:ru.stqa.selenium.tests.LoginTests@133e16fd]" name="initTests" is-config="true" duration-ms="2486" started-at="2020-07-24T11:33:51 IDT" finished-at="2020-07-24T11:33:54 IDT">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- initTests -->
+        <test-method status="PASS" signature="NegativeLoginIncorrect(java.lang.String, java.lang.String, java.lang.String)[pri:0, instance:ru.stqa.selenium.tests.LoginTests@133e16fd]" name="NegativeLoginIncorrect" duration-ms="2361" started-at="2020-07-24T11:33:54 IDT" data-provider="dataProviderFirst" finished-at="2020-07-24T11:33:56 IDT">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[anypassword]]>
+              </value>
+            </param>
+            <param index="2">
+              <value>
+                <![CDATA[Missing email]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- NegativeLoginIncorrect -->
+        <test-method status="PASS" signature="tearDownForTest(org.testng.ITestResult)[pri:0, instance:ru.stqa.selenium.tests.LoginTests@133e16fd]" name="tearDownForTest" is-config="true" duration-ms="579" started-at="2020-07-24T11:33:56 IDT" finished-at="2020-07-24T11:33:57 IDT">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[[TestResult name=NegativeLoginIncorrect status=SUCCESS method=LoginTests.NegativeLoginIncorrect(java.lang.String, java.lang.String, java.lang.String)[pri:0, instance:ru.stqa.selenium.tests.LoginTests@133e16fd] output={null}]]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDownForTest -->
+        <test-method status="PASS" signature="initWbDriver()[pri:0, instance:ru.stqa.selenium.tests.LoginTests@133e16fd]" name="initWbDriver" is-config="true" duration-ms="5493" started-at="2020-07-24T11:33:57 IDT" finished-at="2020-07-24T11:34:02 IDT">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- initWbDriver -->
+        <test-method status="PASS" signature="initTests()[pri:0, instance:ru.stqa.selenium.tests.LoginTests@133e16fd]" name="initTests" is-config="true" duration-ms="2275" started-at="2020-07-24T11:34:02 IDT" finished-at="2020-07-24T11:34:04 IDT">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- initTests -->
+        <test-method status="PASS" signature="NegativeLoginIncorrect(java.lang.String, java.lang.String, java.lang.String)[pri:0, instance:ru.stqa.selenium.tests.LoginTests@133e16fd]" name="NegativeLoginIncorrect" duration-ms="2868" started-at="2020-07-24T11:34:04 IDT" data-provider="dataProviderFirst" finished-at="2020-07-24T11:34:07 IDT">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[12345@test.com]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[]]>
+              </value>
+            </param>
+            <param index="2">
+              <value>
+                <![CDATA[There isn't an account for this email]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- NegativeLoginIncorrect -->
+        <test-method status="PASS" signature="tearDownForTest(org.testng.ITestResult)[pri:0, instance:ru.stqa.selenium.tests.LoginTests@133e16fd]" name="tearDownForTest" is-config="true" duration-ms="568" started-at="2020-07-24T11:34:07 IDT" finished-at="2020-07-24T11:34:08 IDT">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[[TestResult name=NegativeLoginIncorrect status=SUCCESS method=LoginTests.NegativeLoginIncorrect(java.lang.String, java.lang.String, java.lang.String)[pri:0, instance:ru.stqa.selenium.tests.LoginTests@133e16fd] output={null}]]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDownForTest -->
+        <test-method status="PASS" signature="initWbDriver()[pri:0, instance:ru.stqa.selenium.tests.LoginTests@133e16fd]" name="initWbDriver" is-config="true" duration-ms="5961" started-at="2020-07-24T11:34:08 IDT" finished-at="2020-07-24T11:34:14 IDT">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- initWbDriver -->
+        <test-method status="PASS" signature="initTests()[pri:0, instance:ru.stqa.selenium.tests.LoginTests@133e16fd]" name="initTests" is-config="true" duration-ms="2598" started-at="2020-07-24T11:34:14 IDT" finished-at="2020-07-24T11:34:16 IDT">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- initTests -->
+        <test-method status="PASS" signature="loginTestPositive()[pri:0, instance:ru.stqa.selenium.tests.LoginTests@133e16fd]" name="loginTestPositive" duration-ms="18466" started-at="2020-07-24T11:34:16 IDT" finished-at="2020-07-24T11:34:35 IDT">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- loginTestPositive -->
+        <test-method status="PASS" signature="tearDownForTest(org.testng.ITestResult)[pri:0, instance:ru.stqa.selenium.tests.LoginTests@133e16fd]" name="tearDownForTest" is-config="true" duration-ms="576" started-at="2020-07-24T11:34:35 IDT" finished-at="2020-07-24T11:34:36 IDT">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[[TestResult name=loginTestPositive status=SUCCESS method=LoginTests.loginTestPositive()[pri:0, instance:ru.stqa.selenium.tests.LoginTests@133e16fd] output={null}]]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDownForTest -->
+      </class> <!-- ru.stqa.selenium.tests.LoginTests -->
+      <class name="ru.stqa.selenium.tests.HomePageTests">
+        <test-method status="PASS" signature="initTestSuite()[pri:0, instance:ru.stqa.selenium.tests.HomePageTests@27fe3806]" name="initTestSuite" is-config="true" duration-ms="11" started-at="2020-07-24T11:33:21 IDT" finished-at="2020-07-24T11:33:21 IDT">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- initTestSuite -->
+        <test-method status="PASS" signature="tearDown()[pri:0, instance:ru.stqa.selenium.tests.HomePageTests@27fe3806]" name="tearDown" is-config="true" duration-ms="0" started-at="2020-07-24T11:34:36 IDT" finished-at="2020-07-24T11:34:36 IDT">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDown -->
+      </class> <!-- ru.stqa.selenium.tests.HomePageTests -->
+    </test> <!-- smoke -->
+  </suite> <!-- Tests -->
+</testng-results>
